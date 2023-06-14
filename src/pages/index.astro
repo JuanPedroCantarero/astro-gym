@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/react-components/card/card.jsx';
+import { GYM_TRAINING } from '../utils/gym_training';
+
+const items = GYM_TRAINING;
+---
+
+<Layout title='Welcome to Astro.'>
+  {
+    items.map((item) => (
+      <div class='trainer_container'>
+        <span class='trainer_container--title'>{item.day}</span>
+        {item.training.map((training) => (
+          <div class='trainer_container--sub'>
+            <Card
+              name={training.name}
+              img={training.image}
+              additionalText={training.additionalText}
+            />
+          </div>
+        ))}
+      </div>
+    ))
+  }
+</Layout>
+
+<style>
+  .trainer_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: aliceblue;
+  }
+  .trainer_container--title {
+    font-size: 24px;
+    font-weight: 700;
+    padding: 10px;
+    min-width: 130px;
+  }
+  .trainer_container--sub {
+    display: flex;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+</style>

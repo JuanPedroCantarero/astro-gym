@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  padding: 4px 6px;
+  min-height: 172px;
+}
+.container_img {
+  width: 160px;
+  max-width: 160px;
+  height: 130px;
+  max-height: 130px;
+}
